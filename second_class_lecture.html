@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<meta charset = "UTF-8">
+<html lang = "en">
+    <head>
+        <title>Comp206_2</title>
+    </head>
+    <body>
+        <h1>Lecture Notes Two</h1>
+        <h2>How to Create a Git Repository</h2>
+        <ol>
+            <li>In the Git homepage, click the "+" icon in the top right corner and select "New Repository"</li>
+            <li>Name the repository and create a README file.</li>
+            <li>Copy the repository to your local machine by clicking the green "Code" button, then click the SSH option in the "Clone" section</li>
+            <li>Create the repository in your home folder</li>
+            <li>Clone your repository from GitHub using git clone <code>git clone git@github.com:USER-NAME/REPOSITORY-NAME.git</code>. The link is the url from step 3.</li>
+            <ul>
+                <li>Note that the repository will be cloned into whichever directory you are in when you run the command</li>
+            </ul>
+        </ol>
+        <h2>How to Write Good Git Commit Messages</h2>
+        <ul>
+           <li><i>Tip: add a "why" to your commit message to explain the purpose behind it.</i></li>
+           <li>A good Commit message has a subject and a body</li>
+           <li>Summarize the change in the subject</li>
+           <li>Keep commit subject within 72-character limit</li>
+           <li><i>Tip: Try to get subject line within 50 characters</i></li>
+           <li>Capitalize the first letter of the subject line and do not end it with a period</li>
+           <li>Use the imperative mood for subject line messages (act like you're trying to tell git to do something for you)</li>
+           <li><i>Tip: A good Git commit subject line should always be able to complete the sentence: "If applied, this commit will (insert subject line here)"</i></li>
+           <li>In the body, provide a clear description of the problem in the codebase</li>
+           <li>In the body, provide a clear description of your technique to solve the problem</li>
+           <li>Wrap the body at 72 characters. Unless using a smart text editor like Vim, you may have to do this manually.</li>
+           <li>Separate the subject from the body with a blank line</li>
+           <li>Use <code>git commit -m &lt message &gt</code> for simple commits</li>
+           <li>Use </code>git commit</code> with Visual Studio Code as the Git editor to create multi-line commit messages</li>
+           <li><i>Tip:Commit whenever there is a meaningful change to the code, especially when it is to a modular element</i></li>
+        
+        </ul>
+        <h2>List of relevant Git Commands</h2>
+        <ul>
+            <li><code>git log</code> prints the full log of commits on a specific branch</li>
+            <ul>
+                <li><code>--oneline</code> prints only the subject line of each commit</li>
+                <li><code>git shortlog</code> groups commits by user and shows only subject line</li>
+            </ul>
+            <li><code>git status</code> shows the untracked and staged files.</li>
+            <li><code>git add "item"</code> adds a file to the staging area</li>
+            <ul>
+                <li>using a "." as a parameter will allow you to add everything in the working directory at once</li>
+            </ul>
+            <li><code>git commit</code> commits the file to your git repository.</li>
+            <ul>
+                <li>adding a <code>-m</code> parameter allows you to type directly in the command line. It is better to us a text editor</li>
+            </ul>
+            <li><code>git push</code> uploads your local files to GitHub</li>
+            <ul>
+                <li>The full command can be written as <code>git push origin main</code></li>
+            </ul>
+
+        <ul>
+    </body>
+</html>
