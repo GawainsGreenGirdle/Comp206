@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<meta charset = "UTF-8">
+<html lang = "en">
+    <head>
+        <title>Comp206_5</title>
+    </head>
+    <body>
+        <h1>Lecture Notes Five</h1>
+        <h2>How to make links in HTML</h2>
+        <ol>
+           <li>A link is made using the &lta&gt tag (anchor)</li>
+           <li>a link knows where it is going with a "href='link'" attribute in the anchor element</li>
+           <ul>
+                <li>Ex. &lta href = https://www.wikipedia.com&gt</li>
+           </ul>
+           <li>the "target" attribute specifies where the new page will be open. target ="_blank" opens it in a new window. target="_self" (default) opens it in the current window.</li>
+           <li>the "rel" attribute stands for "relation." Two common values "noopener noreferrer" are useful for links.</li>
+           <ul>
+                <li>"noopener" prevents the new tab from interacting with the original page.</li>
+                <li>"noreferrer" prevents the new tab from seeing where you were routed from.</li>
+           </ul>
+           <li>An abosulte link has a scheme://domain/path</li>
+           <li>A relative link doesn't need a scheme or a domain. Instead, it looks a lot like the way a folder is navigated in linux.</li>
+           <ul>
+                <li>Adding ./ before your path tells the directory that you are travelling relative to your current domain.</li>
+           </ul> 
+        </ol>
+        <p><a href = "./../index.html" target = "_blank" rel = "noopener noreferrer">Home</a><br><a href = "fourth_class_lecture.html" target="_blank" rel="noopener noreferrer">Previous</a><br><a target="_blank" rel="noopener noreferrer">Next</a></p>
+    </body>
+</html>
