@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang = "en">
+<meta charset="UTF-8">
+    <head>
+        <title>Comp206_4</title>
+    </head>
+    <body>
+        <h1>Lecture Notes Four</h1>
+        <ol type = "I">
+            <li>Command Line Prompts</li>
+            <ol type = "A">
+                <li>Tar</li>
+                <ol>
+                    <li>tar command is used to archive more than one file into one file</li>
+                    <li><code>tar -cvf log.tar *.log</code></li>
+                    <ol type = "a">
+                        <li>* is a wildcard which means that it can be everything</li>
+                        <li>the command above picks everything in the directory with a .log suffix and moves it to log.tar</li>
+                        <li>you can use the <code>-c</code> option to find a different option</li>
+                    </ol>
+                </ol>
+            </ol>
+            <li>Permissions on the File Systems</li>
+            <ol type = "A">
+                <li>Ownership properties determine who owns the directory (the creator) and who is in the group with the owner</li>
+                <li>Permissions for the owner, group, and others</li>
+                <ol>
+                    <li>There are three times of permissions: read, write, and execute.</li>
+                    <ol type = "a">
+                        <li><code>ls -l</code> prints the permissions of every file and directory.</li>
+                        <li>a "d" on the far left indicates a directory</li>
+                        <ol type = "i">
+                            <li>ex. d,rwx,rwx,rwx</li>
+                        </ol>
+                        <li>a "-" at the start of a file indicates that it is a file, not a directory</li>
+                        <li>the first three symbols are for the owner, second set for group, and third set for everyone else</li>
+                        <li>the first letter "r" means read, the second letter "w" means write, the third letter "x" means execute.</li>
+                    </ol>
+                    <li>On a system an owner can have fewer rights than the other users, but that is unconventional.</li>
+                    <li>using <code>ls -l</code> you can also see the owner and the group</li>
+                    <ol type = "a">
+                        <li>Ex. -rwxr--r-- 1 <i>noah</i> <b>noah</b></li>
+                        <li>The itallics indicate the owner, the bold indicates the group</li>
+                        <ol type = "i">
+                            <li>You can be a member of multiple groups and can be assigned using a command</li>
+                        </ol>
+                    </ol>
+                    <li>if you are the owner and you don't have access, linux only checks the ownership permissions; you will be locked out even if the group and others have permissions.</li>
+                    <li>There is no layered permissions, the permissions in your section (owner, group, else) are the permissions that will apply</li>
+                </ol>
+                <li><code>CHMOD</code></li>
+                <ol>
+                    <li>CHMOD is used to change permissions</li>
+                    <li>the owner is the only one who can change the users for everyone</li>
+                    <li>The owner of a file can be changed but you must be the owner; a group can also be changed but you must be a member of the group and a member of the group you change it to.</li>
+                    <li>Use the following symbols</li>
+                    <ol type = "a">
+                        <li>u represents the user who owns the file</li>
+                        <li>g represents the group</li>
+                        <li>o represents all other users</li>
+                        <li>a is all of the above</li>
+                        <li>r pertains to the read permission</li>
+                        <li>w pertains to the write permission</li>
+                        <li>x pertains to the execute permission</li>
+                        <li>= sets</li>
+                        <li>+ adds</li>
+                        <li>- removes</li>
+                    </ol>
+                    <li>Ex. <code>chmod g-x foo</code> removes the execute permission for members of the group for the "foo" file</li>
+                    <li>Ex. <code>chmod a=rw,u+x foo</code> sets all permissions to read and write, then adds execute permissions for the owner for the "foo" file</li>
+                    <li>if no group, user, or other is specified, all "a" permissions will be updated accordingly.</li>
+                    <li>Octal representation can be used to represent the permissions. Convert octal to binary representation, the leftmost corresponds to read, the middle corresponds to write, and the rightmost corresponds to execute.</li>
+                    <ol type = "a">
+                        <li>ex. <code>chmod 700 foo</code> gives you all permissions (7 = 111) and removes all permissions from groups and others (0=000)</li>
+                    </ol>
+                    <li>Execute in a directory means you can traverse.</li>
+                    <li>Write permissions are needed to create a file in a directory.</li>
+                    <li>Write permissions are necessary for the cat command</li>
+                </ol>
+                <li>The command <code>cat</code> allows you to read a file or concatenate it.</li>
+            </ol>
+            <li>Vim text editor</li>
+            <ol type = "A">
+                <li>Command line text editors allow you to creat/edit text files</li>
+                <li>Vim is difficult to learn but very powerful.</li>
+                <ol>
+                    <li>vim does not have a GUI; everything happens through the command line.</li>
+                    <ol type = "a">
+                        <li>As you memorize things, it gets easier to use vim than other options, allowing you to quickly and efficiently edit files.</li>
+                    </ol>
+                    <li>Vim has three modes</li>
+                    <ol type = "a">
+                        <li>Normal Mode</li>
+                        <ol type = "i">
+                            <li>Used to navigate and copy and paste</li>
+                            <li>use special one letter commands</li>
+                            <li>use arrow keys</li>
+                        </ol>
+                        <li>Insert Mode</li>
+                        <ol type = "i">
+                            <li>edit text</li>
+                            <li>can use any keyboard keys</li>
+                            <li>press "i" key to enter</li>
+                            <li>press "esc" key to leave</li>
+                        </ol>
+                        <li>Command Mode</li>
+                        <ol type = "i">
+                            <li>issues commands like Save, Quit, Search, etc.</li>
+                        </ol>
+                    </ol>
+                </ol>
+                <li>Vim commands</li>
+                <ol>
+                    <li>start vim by typing vi</li>
+                    <li>use i to enter editing mode.</li>
+                    <li>use esc to exit insert mode.</li>
+                    <li>use $ to skip to end of line.</li>
+                    <li>use 0 to skip to start</li>
+                    <li>w brings you to the start of the next word.</li>
+                    <li>o brings you to a new line in insert mode.</li>
+                    <li>Shift + o inserts a line above and places your cursor there</li>
+                    <li>a moves your cursor one letter after your item</li>
+                    <li>Shift + a puts you in insert mode and </li>
+                    <li>: brings you into command mood.</li>
+                    <li>to quit, you can type q and press enter (discards changes with q!)</li>
+                    <li>to save and quit, do wq and press enter: write and then quit</li>
+                    <li>to save, press w and enter.</li>
+                    <li>saveas + name +enter allows you to save as a specific file.</li>
+                </ol>
+            </ol>
+        </ol>
+    </body>
+</html>
