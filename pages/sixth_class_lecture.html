@@ -1,0 +1,70 @@
+<!DOCTYPE = html>
+<meta charset = "UTF-8">
+<html lang = "en">
+    <head>
+        <title>Comp206_6</title>
+    </head>
+    <body>
+        <h1>Comp206 Lecture 6</h1>
+        <ol type="I">
+            <li>Review</li>
+            <ol type="A">
+                <li>you can use arrows to redirect streams into different outputs</li>
+                <ol>
+                    <li><code>ls -al > directorylist.txt</code> will create a document called directorylist.txt which will contain the output stream from ls</li>
+                    <li><code>ls -al >> directorylist.txt</code> will append the output at the end of the document.</li>
+                    <li>Default is 1 (stdout), Adding 2 before the > will allow you to route (stderr) instead.</li>
+                    <ol type = "a">
+                        <li>Ex. <code>ls -al 2>> directorylist.txt</code></li>
+                    </ol>
+                    <li>By using &lt, you can the contents of a file into stdin.</li>
+                    <ol type = "a">
+                        <li>Ex. <code>command &lt input.txt</code></li>
+                    </ol>
+                </ol>
+                <li>The Pipe symbol: <code>|</code></li>
+                <ol>
+                    <li>The pipe redirects the output on one command to be the input of another command</li>
+                    <li>Ex. <code>ls -la | less</code></li>
+                    <li>Less, head, tail</li>
+                    <ol type="a">
+                        <li>head presents only the first 10 files (unless otherwise specified)</li>
+                        <li>tail presents only the last 10 files (unless otherwise specified)</li>
+                        <li>the number of items can be specified with <code>-n #</code></li>
+                        <ol type = "i">
+                            <li>Ex. <code>tail -n 3 directorylist.txt</code> will print out the last three lines of the file directorylist.txt</li>
+                        </ol>
+                    </ol>
+                </ol>
+                <li>The $ symbol.</li>
+                <ol>
+                    <li>$ is used for nested execution</li>
+                    <li>Ex. <code>cat $(ls | tail -n5) > list5.out</code> concatenates the last 5 files int eh current directory and writes them to list5.out.</li>
+                </ol>
+            </ol>
+            <li>Commands</li>
+            <ol type="A">
+                <li><code>$man</code> opens the manual</li>
+                <li><code>$man ls</code> opens the manual for the specific command (in this instance ls)</li>
+                <li><code>history</code> returns all the commands you have run</li>
+                <li><code>cut -d &ltdelimiter&gt [file]</code> extracts sections of text from each line</li>
+                <ol>
+                    <li>Ranges can be specified to extract a certain number of bytes, characters, or words from the first line</li>
+                    <li>Ranges are specified by 1,2,3 (first three bytes), 1-3 (first three bytes), 1-3,4,5,7-8, 1- (byte 1 onward), -3 (until 3rd byte, inclusive)</li>
+                    <li><code>-b</code>extracts bytes (letters)</li>
+                    <li><code>-c</code> extracts characters in a certain column</li>
+                    <li><code>cut -c [(k)-(n)]</code> extracts all characters between columns k and n.</li>
+                    <li><code>-f</code> extracts fields separated by a delimiter (default is tab)</li>
+                    <li><code>-d</code> sets the delimiter, like ",", " ", ".", etc.</li>
+                    <ol type = "a">
+                        <li>Ex. <code>cut -d " " -f 1 sixth_class_lecture.html</code> will print out the first item in each line bounded by spaces or tabs.</li>
+                    </ol>
+                    <li><code>--complement</code></li>
+                </ol>
+            </ol>
+        </ol>
+        <p><a href = "fifth_class_lecture.html" target = "_blank" rel = "noopener noreferrer">Back</a></p>
+        <p><a href = "./../index.html" target = "_blank" rel = "noopener noreferrer">Home</a></p>
+        <p><a target = "_blank" rel = "noopener noreferrer">Next</a></p>
+    </body>
+</html>
