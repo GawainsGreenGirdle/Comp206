@@ -72,6 +72,52 @@
                 <li>note that there can be no spaces in the directory</li>
             </ol>
         </ol>
+        <li>Slide Notes</li>
+        <ol type = "A">
+            <li>Archives</li>
+            <ol>
+                <li>An archive combines multiple files into one</li>
+                <li>The most common archive tools used on Unix systems are tar and gzip</li>
+                <li>tar allows you to combine several files into a single file</li>
+                <li>gzip allows you to compress a file</li>
+                <li>Tar</li>
+                <ol type = "a">
+                    <li><code>.tar</code> marks an archive file, while <code>.tgz</code> marks a compressed file.</li>
+                    <li>Switches</li>
+                    <ol type = "i">
+                        <li><code>-c</code> creates a new tar archive</li>
+                        <li><code>-x</code> extracts from the tar archive</li>
+                        <li><code>-f</code> specifies the archive file name</li>
+                        <li><code>-v</code> outputs all information (verbose mode)</li>
+                        <li><code>-z</code> allows you to compress the archive</li>
+                    </ol>
+                    <li><code>tar -cvf log.tar *.log</code> creates a new tar archive called log.tar, outputs all relevant information, and archives all files that end with ".log"</li>
+                    <li><code>tar -zcvf log.tgz *.log</code> does the same as above but compresses the files</li>
+                    <li><code>tar -xvf log.tar</code> extracts those files, and decompresses them if "-z" is added</li>
+                    <li>the option <code>-C</code> (note the capital) allows you to specify the path to the directory you want to extract the files at.</li>
+                </ol>
+            </ol>
+            <li>Permissions</li>
+            <ol>
+                <li>There are three types of permissions: read, write, and execute</li>
+                <li>ls -l shows the permissions for the file (long)</li>
+                <li>The first three permissions are for the owner, the second three for the group, and the third three for everyone else.</li>
+                <li>Permissions do not overlap</li>
+                <li>Changing permissions</li>
+                <ol type = "a">
+                    <li>CHMOD is used to change the permissions</li>
+                    <li>U for user, G for group, O for others, A for all</li>
+                    <li>R for read, W for write, X for execute</li>
+                    <li>= sets, + adds, - removes.</li>
+                    <li>Ex. <code>chmod a=rw,u+x file.html</code> sets everyone's permissions to read, write, then gives the owner execute permissions</li>
+                    <li>You either have a permission or don't, so permissions for each user can be represented with binary digits.</li>
+                    <li>Binary can be converted to decimal (or octal) allowing you to specify permissions with only 3 numbers.</li>
+                    <ol type = i>
+                        <li>Ex. <code>chmod 707</code> gives owner and other all permissions while keeping all from the group</li>
+                    </ol>
+                </ol>
+            </ol>
+        </ol>
     </ol>
 <p><a href = "./../index.html" target = "_blank" rel = "noopener noreferrer">Home</a><br><a href = "second_class_lecture.html" target="_blank" rel="noopener noreferrer">Previous</a><br><a href = "fourth_class_lecture.html" target="_blank" rel="noopener noreferrer">Next</a></p>
 </body>
