@@ -58,6 +58,49 @@
             </ul>
 
         <ul>
+        <h2>How to connect new accounts to Git</h2>
+        <ol>
+            <li>run the command <code>git config --global user.name "Your Name"</code></li>
+            <li>run the command <code>git config --global user.email "email"</code></li>
+            <li>run the command <code>git config --global init.defaultBranch main</code></li>
+            <li>run the command <code>git config --global pull.rebase false</code></li>
+        </ol>
+        <h2>Slide Notes</h2>
+        <ol type = I>
+            <li>Operating System</li>
+            <ol type = A>
+                <li>The Operating System keeps resources seperate for different programs ("insulates")</li>
+                <li>The OS manages all computer resources (Ex. memory, CPU, disk, etc.)</li>
+                <li>The OS manages peripherals (like the mouse)</li>
+                <li>The OS provides <i>system libraries</i> which allow users to perform actions on the OS</li>
+                <li>Types of OS</li>
+                <ol>
+                    <li>Single-User, Single-Tasking; performs one task at a time for one user at a time</li>
+                    <li>Single-User, Multi-tasking; one user performs multiple tasks at a time (ex. multiple apps open, running in the background)</li>
+                    <li>Multi-User, Multi-tasking; multiple users perform multiple tasks.</li>
+                </ol>
+            </ol>
+            <li>Kernel</li>
+            <ol type = "A">
+                <li>Linux is the Kernel of the OS, a distribution such as Ubuntu works with Linux to act as the OS</li>
+                <li>Android and ChromeOS use Linux kernel</li>
+                <li>The Kernel is responsible for memory management</li>
+            </ol>
+            <li>Command Line basics</li>
+            <ol type = "A">
+                <li>A command has three main components: <code>command [options] [arguments]</code></li>
+                <li>Commands</li>
+                <ol>
+                    <li><code>ls -a</code> shows all files including hidden files</li>
+                    <li><code>ls -l</code> shows contents in long format</li>
+                    <li><code>rmdir [options]</code> removes an empty directory</li>
+                    <li><code>cp</code> copies a file from one place to another</li>
+                    <li><code>-i</code> can be used to force confirmation before proceeding for cp, mv, rm</li>
+                    <li><code>-r</code> can be used on cp or rm to recursively visit files and subdirectories</li>
+                    <li><code>-f</code> forces mv and rm to act, overriding -i</li>
+                </ol>
+            </ol>
+        </ol>
         <p><a href = "./../index.html" target = "_blank" rel = "noopener noreferrer">Home</a><br><a href = "third_class_lecture.html" target="_blank" rel="noopener noreferrer">Next</a></p>
     </body>
 </html>
