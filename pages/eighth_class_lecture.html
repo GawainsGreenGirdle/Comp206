@@ -1,0 +1,105 @@
+<!DOCTYPE = html>
+<meta charset = "UTF-8">
+<html lang = "en">
+    <head>
+        <title>Comp206_8</title>
+    </head>
+    <body>
+        <h1>Slide Notes 05</h1>
+        <ol type = "I">
+            <li>Text Stream Processing</li>
+            <ol type = "A">
+                <li>Commands</li>
+                <ol>
+                    <li><code>cut -d [file]</code> is used to extract text from specific sections of text. -d allows you to set a delimiter (default is tab). Ex. <code>cut -d ',' -f 1,3 data.csv</code> extracts the first and third column separated by commas. <code>-f</code> is necessary to extract specific columns</li>
+                    <li><code>wc [-clw] [file]</code> counts the number of words, lines and characters in a file. c, counts characters, l counts lines, w counts words. Ex. <code>wc -l data.csv</code></li>
+                    <li><code>sort [options] [file]</code> sorts data in a file. -n treats sorting key as numeric. -r sorts in descending order. -o writes to an output file.</li>
+                    <li><code>uniq [file]</code> filters out repeated lines from a file and prints only one instance of each. The input must be sorted first, otherwise duplicates will still be returned. -c prefixes each line with the number of occurences.</li>
+                    <li><code>cat data.txt | cut -f2 | sort | uniq -c | sort -nr</code> is an example of how commands can be chained together for powerful effects.</li>
+                    <li><code>grep [options] STRING FILE_LIST</code> searches for patterns in files, like a find feature in a word processor. STRING is the regular expression (string to match). -i ignores cast. -n displays the line number and the line. -c only counts the number of matches. -v displays only lines that do not match. -l lists file names in which matches were found. Ex. <code>grep -i "do not" *.html</code> returns all the lines in html files which contain "do not" in the current directory.</li>
+                </ol>
+            </ol>
+            <li>Shell Wild Cards</li>
+            <ol type = "A">
+                <li>* represents any pattern. Ex. <code>*.doc</code> will select all files ending with .doc</li>
+                <li>? represents any single character. Ex. <code>?at.doc</code> will select bat.doc and cat.doc, but not that.doc.</li>
+                <li>[] selects any character within brackets. Ex. cat.d[aoz]c will select cat.doc, cat.dac, and cat.dzc.</li>
+                <ol>
+                    <li>Ranges can be represented alphabetically or in order. Ex. [a-d], [1-9].</li>
+                    <li>! marks <i>not</i> in front of the character. Ex. [!a] selects any element other than a.</li>
+                </ol>
+                <li>The shell is the one which expands commands, not the command.</li>
+                <li>You can match shell name expressions by separating each expression by a /. Ex. <code>*/*.txt</code> would match any .txt files only a single directory below.</li>
+
+            </ol>
+        </ol>
+        <h1>Slide Note 06 & 07</h1>
+        <ol type = "I">
+            <li>For information on Bash scripts, refer to lecture note 6</li>
+            <ol type = "A">
+                <li>.sh seems to be a standard suffix for bash scripts.</li>
+            </ol>
+            <li>Conditional Expressions</li>
+            <ol type = "A">
+                <li><code>[ EX ], [[ EX ]]</code>. Note the spaces (especially between the expressions and their enclosing brackets).</li>
+                <li>[[ EX ]] is more powerful than [ EX ]. [ EX ] evaluates expressions simply (without running any commands or allowing pattern matching), while [[ EX ]] allows those things.</li>
+                <ol>
+                    <li>[ $answer=*y ] checks if the answer is *y.</li>
+                    <li>[[ $answer=*y ]] checks if the answer ends in y.</li>
+                </ol>
+                <li>Integer comparison tests</li>
+                <ol>
+                    <li>Integers can be compared with -eq (equals), -ne (not equal), -gt (greater than), -lt (less than), -ge (greater or equal), -le (less or equal)</li>
+                </ol>
+                <li>Strings can be compared with =, !=, -n (true if the string's length is not equal to 0), -z (true if the string's length is 0)</li>
+                <li>Files can be tested with -r (exists, readable), -w (exists, writable), -x (exists, executable), -f(exists and regular), -d (exists and is directory)</li>
+            </ol>
+            <li>Control Structures</li>
+            <ol type = "A">
+                <li>CONDITIONAL: if COMMAND; then [NEWLINE] [elif COMMAND ; then][else ...] fi</li>
+                <ol>
+                    <li>Note the semi-colons</li>
+                </ol>
+                <li>CASE STATEMENT</li>
+                <ol>
+                    <li>case condition in</li>
+                    <li>condition1) action1;;</li>
+                    <li>condition2) action2;;</li>
+                    <li>condition3 | condition4) action3;;</li>
+                    <li>*) else_action;;</li>
+                    <li>esac</li>
+                </ol>
+                <li>FOR LOOP</li>
+                <ol>
+                    <li>for var in list</li>
+                    <li>do</li>
+                    <li>actions</li>
+                    <li>done</li>
+                </ol>
+                <li>WHILE LOOP</li>
+                <ol>
+                    <li>while condition</li>
+                    <li>do</li>
+                    <li>Actions</li>
+                    <li>done</li>
+                </ol>
+                <li>FUNCTIONS</li>
+                <ol>
+                    <li>FunctionName ()</li>
+                    <li>{</li>
+                    <li>Function body</li>
+                    <li>[return int-value]</li>
+                    <li>[exit int-value]</li>
+                    <li>}</li>
+                    <ol type = "a">
+                        <li>Add 10 20 calls a function called add with the parameters 10 and 20</li>
+                        <li>Variables can be made local by calling local on them. Ex. <code>local var="local"</code></li>
+                        <li>return can only return a value in the range of 0-255</li>
+                        <li>To return another value, you can use a global variable or write to stdout and redirect with command substitution</li>
+                        <li>You can run loops in Bash in a subshell. However, their variables only exist inside the loop.</li>
+                    </ol>
+                </ol>
+            </ol> 
+        </ol>
+    </body>
+</html>
