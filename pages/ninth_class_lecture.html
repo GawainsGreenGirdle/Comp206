@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<meta charset = "UTF-8">
+<html lang = "en">
+    <head>
+        <title>Comp206_9</title>
+    </head>
+    <body>
+        <h1>Slide Notes 08</h1>
+        <ol type = "I">
+            <li>Environmental Variables</li>
+            <ol type = "A">
+                <li>Environmental Variables store configuration information and control the behavior of your system.</li>
+                <li>There are a number of common environmental variables.</li>
+                <ol>
+                    <li>PATH: a list of directories to search for executables.</li>
+                    <li>USER: logged-in user name</li>
+                    <li>HOME: current user's home directory</li>
+                    <li>SHELL: Default shell</li>
+                    <li>PWD: Current working directory</li>
+                    <li>LANG: language/locale settings</li>
+                    <li>EDITOR: preferred text editor</li>
+                </ol>
+                <li><code>env</code> allows you to visit the enviornmental variables.</li>
+                <li>Defining Environmental Variables</li>
+                <ol>
+                    <li><code>export SHELL_VAR=value</code> exports the variable so it is visible to all child processes</li>
+                    <li><code>SHELL_VAR=value</code> defines a variable that is not exported.</li>
+                    <li>For the script <code>./HelloName</code> with the code <code>$cat HelloName; echo "Hello $name"</code>. If you run the command name=Noah in the shell it will only print "Hello" unless you also run <code>export</code></li>
+                </ol>
+                <li>Persistent Environmental Variables</li>
+                <ol>
+                    <li>To make a persistent environmental variable, you need to define the variable in a startup file</li>
+                    <ol type = "a">
+                        <li>.bash_profile executes when you log in</li>
+                        <li>.bashrc executes when a new "interactive" bash shell is started (ex. after you tupe bash in your terminal)</li>
+                    </ol>
+                </ol>
+                <li>PATH</li>
+                <ol>
+                    <li>A script can be made executable just by typing its name (you don't have to specify the folders it is in)</li>
+                    <li>To do the above, run the command <code>export PATH=$PATH:/path/to/your/script</code>. Congratulations. You will now be able to run the command just by typing it out.</li>
+                </ol>
+                <li>Aliases</li>
+                <ol>
+                    <li>you can define an alias in .bashrc to customize your account</li>
+                    <li>alias ll='ls -l -a' creates a command ll which is short for ls -l -a</li>
+                </ol>
+            </ol>
+            <li>Advanced Utilities</li>
+            <ol type = "A">
+                <li>In: Hard and Symbolic Links</li>
+                <ol>
+                    <li>A link is a reference or a pointer to a file in a directory.</li>
+                    <li>Links have to use the absolute path if they are in different directories</li>
+                    <li>Hard Link</li>
+                    <ol type = "a">
+                        <li>A Hard Link gives a file another name. Ex. <code>ln /path/file link_name</code></li>
+                        <li>As long as one name remains, the file will still exist.</li>
+                        <li>You can only link files (not directories) and can't link across volumes.</li>
+                    </ol>
+                    <li>Soft Link</li>
+                    <ol type="a">
+                        <li>A soft link is a shortcut pointing to another directory.</li>
+                        <li>If the target file is deleted, the symlink becomes broken.</li>
+                        <li>Symbolic links can be created across volumes or disks</li>
+                    </ol>
+                </ol>
+                <li>Find</li>
+                <ol>
+                    <li>Find searches for other files and directories</li>
+                    <li>Can be combined with other utilities to execute commands on the files or directories that have been located.</li>
+                    <li><code>find [OPTIONS...] STARTINGDIR -name SEARCHFOR</code>. STARTINGDIR is the relative or absolute path of the directory to start the search in. SEARCHFOR is the actual directory, file name, or pattern.</li>
+                    <li>Ex. <code>find /home/noah/comp206 -name unixtips.tx</code> searches for files with the name unixtips.tx starting from the given directory.</li>
+                    <li><code>-type</code> allows you to find only files of type <code>f</code> (regular files) or <code>d</code> (Directories)</li>
+                    <li><code>-perm</code> only finds files which match specified permissions (ex. 777).</li>
+                    <li><code>-exec</code> allows you to run a command on each file found.</li>
+                    <ol type="a">
+                        <li>Ex. <code>find ./ -name '*.txt'</code> finds all .txt files from the home directory onwards. <code>find ./ -name '*.txt' -exec ls -l {} \;</code> finds all the files in the home and subdirectories ending in .txt and runs the command ls -l. Note that \ signals the end of the -exec option</li>
+                    </ol>
+                </ol>
+            </ol>
+        </ol>
+    </body>
+</html>
