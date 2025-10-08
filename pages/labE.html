@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html lang = "en">
+    <head>
+        <title>Comp206_LabE</title>
+    </head>
+    <body>
+        <ol type = "I">
+            <li>man gcc</li>
+            <li>stdio.h</li>
+            <ol type = "A">
+                <li>std stands for standard, i for input, o for output</li>
+                <ol>
+                    <li>You need stdio.h for almost all uses. Ex. i=4s requires </li>
+                </ol>
+                <li>.h files indicated the suffix for all files</li>
+                <li>You can always try to replace libraries with hard code in your script --  it will just make it a very long script.</li>
+                <li>The correct suffix for C programs is .c. Compare with bash programs which is .sh.</li>
+            </ol>
+            <li>New knowledge</li>
+            <ol type = "A">
+                <li>if(scanf("%d", &age) != 1){puts("Invalid input");} Is the best way to read an integer. %d indicates the data type, &age indicates that the variable "age" is being set to the pointer to the read data.</li>
+                <ol>
+                    <li>%d means integer, %s reads until whitespace, %f reads a float, %lf reads a double, %c reads a single character, %x reads hexadecimal.</li>
+                </ol>
+                <li>Casting variables to different values is difficult and often throws errors.</li>
+                <li>Segmentation Fault is an error which occurs when the program attempts to access a place in memory it doesn't have access to. </li>
+                <li>Call by reference can be done by putting an * in front of the variable name. This accesses the pointer directly rather than making a copy of a value when passed to a function parameter. In the function signature, the variable is declared "int* x" for example.</li>
+                <li>Function return values</li>
+                <ol>
+                    <li>int, void.</li>
+                </ol>
+                <li>printf(); is an alternative to put() which seems more powerful. You can specify variables to be sent to specific places after the chain of text." Ex. printf("numbers: x:%d , y:%d\n", x, y) prints the values of variables x, y. %d specifies that they are ints. %s would specify strings (array of characters).</li>
+                <li>while loops resemble while loops in java.</li>
+            </ol>
+        </ol>
+    </body>
+</html>

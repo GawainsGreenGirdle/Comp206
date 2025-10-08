@@ -80,6 +80,53 @@
                 </ol>
             </ol>
         </ol>
+        <h2>Lesson 10 Slides</h2>
+        <ol type = "I">
+            <li>Facts about C</li>
+            <ol type = "A">
+                <li>C was invented for the Unix operating system (built for the linux terminal)</li>
+                <li>C was a successor to B and was formalized by the ANSI in 1988</li>
+                <li>C directly interacts with hardware and is especially suitable for developing system utilities, compilers, and drivers.</li>
+                <li>Unlike Java or Python, which are first compiled to bytecode and then interpreted, C is compiled directly by the gcc compiler.</li>
+                <li>C++, Java, and Objective C are all children of C; high level programming languages.</li>
+            </ol>
+            <li>Structure of a C program</li>
+            <ol type = "A">
+                <li>Comments: /* */, // -- compiler does not read text in between or after, respectively</li>
+                <li>Libraries: #include &ltstdio.h&gt -- adds the studio.h library to c</li>
+                <ol>
+                    <li>stdio.h is the standard input/output library which can do put() (write strings to terminal) and getc() (read characters)</li>
+                </ol>
+                <li>Main: <code>int main(void){}</code> -- mandatory method. All programs start executing from main method</li>
+                <li>Declaring Variables: <code>char c</code>, <code>int i</code>, etc.</li>
+                <ol>
+                    <li>Data types are: char, int</li>
+                </ol>
+                <li>Punctuation: statements end with semicolons unless they are blocks</li>
+                <li>Standard Layout: Directives | Functions | Main function </li>
+                <li>Logic: || (or); == (equals); if(){}else{}</li>
+                <li>Return Statements: "return x;"</li>
+                <li>Loops: for(n=0; n &lt 10;n++){}</li>
+            </ol>
+            <li>How to run a C program</li>
+            <ol type = "A">
+                <li>gcc</li>
+                <ol>
+                    <li>vi helloworld.c</li>
+                    <li>gcc helloworld.c; converts text files into binary machine-code files.</li>
+                    <li>./a.out; the Executable file is the binary machine code file name.</li>
+                </ol>
+                <li>It is helpful to redirect the error to a textfile so that it can be cat-ed to easily locate errors. Error messages are longer and the screen will scroll fast. Ex. gcc helloworld.c 2>textfilename.txt</li>
+                <li>The machine makes assumptions about errors so that it can keep compiling. Only the first few errors will be accurately reported. Use best judgement and make changes incrementally!</li>
+                <li>argc is like $# in Bash. argv[1] is like $1, argv[2] is like $2, etc.</li>
+            </ol>
+            <li>Methods in c</li>
+            <ol type = "A">
+                <li>puts; int puts(char const *string). Ex. puts("Hello World"\n)</li>
+                <li>Escape characters; \n new line, \r carriage return, \t tab, \\ backslash, \b backspace</li>
+                <li>getc; int getc(FILE *stream); c = getc(stdin); reads the character in as an integer.</li>
+            </ol>
+        </ol>
         <p><a href = "eighth_class_lecture.html" target = "_self" rel = "noopener noreferrer">Back</a></p>
         <p><a href = "./../index.html" target = "_self" rel = "noopener noreferrer">Home</a></p>
         <p><a href = "" target="_self" rel = "noopener noreferrer">Next</a></p>
